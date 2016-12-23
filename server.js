@@ -50,8 +50,38 @@ db.once('open', function(){
 
 
 var players = [];
+var npcs = [];
+
+var npcId = shortid.generate();
+var npc = {
+    id: npcId,
+    type: 0,
+    name: 'Test NPC',
+    class: 'Warrior',
+    currentHealth: 100,
+    maxHealth: 100,
+    currentMana: 0,
+    maxMana: 0
+};
+
+npcs[npc.id] = npc;
 
 
+var iFrequency = 5000;
+var myInterval = 0;
+
+function startLoop() {
+    if(myInterval > 0) clearInterval(myInterval);
+    myInterval = setInterval( WorldTick, iFrequency );
+}
+
+function WorldTick()
+{
+    console.log('world tick');
+    return false;
+}
+
+startLoop();
 
 io.on('connection', function(socket) {
     
@@ -85,6 +115,10 @@ io.on('connection', function(socket) {
         
         socket.emit('spawn', players[playerId]);
         console.log('sending spawn to new player for id: ', playerId);
+    };
+    
+    for(var npc_id in npcs){
+            socket.emit('npcspawn', npcs[npc_id]);
     };
     
     socket.on('move', function(data){
