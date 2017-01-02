@@ -18,17 +18,57 @@ db.once('open', function(){
 var User = mongoose.model('Users', userSchema);
 
 io.on('connection', function(socket) {
+    
+    socket.emit('login_connected');
     var username = '';
     var password = '';
     console.log('user connected');
-    socket.emit('connected');
+    
     socket.on('trylogin', function(data){
         username = data.username;
         password = data.password;
         console.log('incoming data: ', JSON.stringify(data));
-        console.log(username);
-        console.log(password);
-
+        data.characters = {
+            
+            character_one: {
+                empty: false,
+                name: 'Aine',
+                race: 'Barbarian',
+                level: 54,
+                zone: 'qeynos2'
+            
+        },
+            character_two: {
+                empty: true
+            
+        },
+            character_three: {
+                empty: true
+            
+        },
+            character_four: {
+                empty: true
+            
+        },
+            character_five: {
+                empty: true
+            
+        },
+            character_six: {
+                empty: true
+            
+        },
+            character_seven: {
+                empty: true
+            
+        },
+            character_eight: {
+                empty: true
+            
+        },
+            
+        };
+        socket.emit('loginsuccess', data);
     });
     
     socket.on('disconnect',function(){

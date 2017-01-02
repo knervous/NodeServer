@@ -5,7 +5,7 @@ var mongoose = require('mongoose');
 
 var http = require('http');
 
-function handleRequest(request, response){
+function handleRequest(request, response) {
     response.end('Path: '+request.url);
 }
 
@@ -78,6 +78,7 @@ function startLoop() {
 function WorldTick()
 {
     console.log('world tick');
+    console.log(new Date(myInterval._idleStart));
     return false;
 }
 
