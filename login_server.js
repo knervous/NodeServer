@@ -1,21 +1,8 @@
 var mongoose = require('mongoose');
 var io = require('socket.io')(process.env.PORT || 7000);
 
-var userSchema = new mongoose.Schema({
-    username: {type: String, unique: true},
-    password: {type: String},
-    created: {type: Date}
-});
-
-mongoose.connect('mongodb://localhost/test');
-
-var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function(){
-    console.log('connected to database');
-});
-
-var User = mongoose.model('Users', userSchema);
+var db = require('./models/db.js');
+var User = mongoose.model('Users'); // if you have acccess to mongoose model you can grab models like this (db.js is what requires them)
 
 io.on('connection', function(socket) {
     
