@@ -1,0 +1,31 @@
+{
+  "name": "nodeserver",
+  "version": "1.0.0",
+  "description": "",
+  "main": "login_server.js",
+  "dependencies": {
+    "express": "^4.14.0",
+    "shortid": "^2.2.6",
+    "git": "^0.1.5",
+    "mongoose": "^4.6.5",
+    "http": "^0.0.0",
+    "socket.io": "^1.5.0",
+    "gulp": "^3.9.1",
+    "todomvc": "^0.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/knervous/NodeServer.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/knervous/NodeServer/issues"
+  },
+  "homepage": "https://github.com/knervous/NodeServer#readme"
+}
