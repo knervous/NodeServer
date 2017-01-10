@@ -10,13 +10,13 @@ var reqNumZero = { type: Number, required: true, default: 0};
 //_id created automatically for each doc..
 var accountSchema = new Schema({
 	name: {type: String, required: true, default: ""},
-	charName: {type: String, required: true, default: ""},
+	//charName: {type: String, required: true, default: ""},
 	sharedPlat: reqNumZero,
 	password: {type: String, required: true, default: ""},
 	status: reqNumZero,
-	lsAccountId: {type: Number, default: null}, // unsure about this behavior, will it always appear in doc and be null if we dont set it?	
+	lsAccountId: {type: String, default: 0 }, // unsure about this behavior, will it always appear in doc and be null if we dont set it?	
 	gmSpeed: reqNumZero,
-	timeCreation: reqNumZero
+	timeCreation: {type: Date, required: true, default: new Date()}
 });
 
 module.exports = mongoose.model('Account', accountSchema);

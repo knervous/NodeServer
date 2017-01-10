@@ -1,61 +1,110 @@
 var mongoose = require('mongoose');
 var io = require('socket.io')(process.env.PORT || 7000);
+var uuid = require('node-uuid');
 
 var db = require('./models/db.js');
-var User = mongoose.model('Users'); // if you have acccess to mongoose model you can grab models like this (db.js is what requires them)
+var Account = mongoose.model('Account'); // if you have acccess to mongoose model you can grab models like this (db.js is what requires them)
+var Player = mongoose.model('Player');
+var Inventory = mongoose.model('Inventory');
 
 io.on('connection', function(socket) {
     
     socket.emit('login_connected');
-    var username = '';
-    var password = '';
     console.log('user connected');
+    var accountId = '';
     
     socket.on('trylogin', function(data){
-        username = data.username;
-        password = data.password;
-        console.log('incoming data: ', JSON.stringify(data));
-        data.characters = {
-            
-            character_one: {
-                empty: false,
-                name: 'Aine',
-                race: 'Barbarian',
-                level: 54,
-                zone: 'qeynos2'
-            
-        },
-            character_two: {
-                empty: true
-            
-        },
-            character_three: {
-                empty: true
-            
-        },
-            character_four: {
-                empty: true
-            
-        },
-            character_five: {
-                empty: true
-            
-        },
-            character_six: {
-                empty: true
-            
-        },
-            character_seven: {
-                empty: true
-            
-        },
-            character_eight: {
-                empty: true
-            
-        },
-            
-        };
-        socket.emit('loginsuccess', data);
+        
+        Account.findOne({ name: data.username }, function(err, userExists){
+           if(err) return console.error(err);
+            if(userExists == null && data.username.length > 0 && data.password.length > 0)
+                {
+                    var newAccount = new Account({
+                        name: data.username,
+                        password: data.password,
+                        lsAccountId: uuid.v4(),
+                        sharedPlat: 1,
+                        status: 0,
+                        gmSpeed: 0,
+                    });
+                    
+                    newAccount.save(function(err, savedAccount) {
+                    if (err) return console.error(err);
+                    console.log(savedAccount);
+                        socket.emit('account_created');
+                    });
+                }
+            if(userExists != null)
+                {
+                    if(data.password == userExists.password)
+                        {
+                            console.log('password okay', userExists.password);
+                            data.account = userExists;
+                            accountId = userExists.lsAccountId;
+                            Player.find({ accountId: userExists.lsAccountId}, function(err, chars){
+                                if(err) return console.error(err);
+                                else{
+                                    data.characters = chars;
+                                    socket.emit('login_success', data);
+                                }
+                            });
+                        }
+                    else if(data.password != userExists.password)
+                    {
+                        console.log('password failed');
+                        socket.emit('password_failed');
+                        
+                    }
+                }
+        });
+        
+    });
+    
+    socket.on('check_name',function(data){
+        console.log(data);
+        Player.findOne({ name: data.name }, function(err, name_found){
+                if(err) return console.error(err);
+                data.exists = Boolean(name_found);
+                socket.emit('name_check', data);
+                console.log('returning value: ', Boolean(name_found));
+                 
+               });
+    });
+    
+    socket.on('create_new_character',function(charData){
+        console.log(charData);
+       var newChar = new Player({
+           x: charData.x,
+           y: charData.y,
+           z: charData.z,
+           zoneId: charData.zoneId,
+           gender: charData.gender,
+           class: charData.class,
+           race: charData.race,
+           level: charData.level,
+           anon: charData.anon,
+           gm: charData.gm,
+           exp: charData.exp,
+           curHp: charData.curHp,
+           mana: charData.mana,
+           endurance: charData.endurance,
+           intoxication: charData.intoxication,
+           str: charData.str,
+           sta: charData.sta,
+           dex: charData.dex,
+           agi: charData.agi,
+           wis: charData.wis,
+           int: charData.int,
+           cha: charData.cha,
+           name: charData.name,
+           accountId: accountId,
+           charId: uuid.v4()
+       });
+        //console.log(newChar);
+        newChar.save(function(err,data){
+            if (err) return console.error(err);
+            socket.emit('character_created');
+        });
     });
     
     socket.on('disconnect',function(){

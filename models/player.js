@@ -2,28 +2,24 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var numz = { type: Number, required: true, default: 0 };
-var stringz = { type: String, required: true, default: ""};
+var stringz = { type: String, required: false, default: "" };
+var datez = { type: Date, required: true, default: new Date() };
 
 // most of these will use numz object above...
 
 var fieldNames = [
-	"accountId",
 	"zoneId",
 	"y",
 	"x",
 	"z",
-	"heading",
 	"gender",
 	"class",
+    "race",
 	"level",
 	"deity",
-	"lastLogin",
-	"timePlayed",
-	"level2",
 	"anon",
 	"gm",
 	"exp",
-	"points",
 	"curHp",
 	"mana",
 	"endurance",
@@ -35,23 +31,12 @@ var fieldNames = [
 	"int",
 	"agi",
 	"wis",
-	"zoneChangeCount",
-	"toxicity",
 	"hungerLevel",
 	"thirstLevel",
 	"pvpStatus",
 	"showHelm",
-	"groupAutoConsent",
-	"raidAutoConsent",
-	"guildAutoConsent",
-	"restTimer",   // why is this capital in the SQL table script for PLAYER table?
 	"airRemaining",
-	"autoSplitEnabled", // autosplit or autoSplit  ...idk
-	"lfp",
 	"lfg",
-	"xTargets",
-	"firstLogon",
-	"eLastInvSnapshot"
 ]
 
 var schemaObj = {};
@@ -61,16 +46,28 @@ fieldNames.map(function(field){
 	schemaObj[field] = numz;
 });
 
+var fieldDates = [
+    
+    "lastLogin",
+	"timePlayed",
+    "creationDate"
+]
+
 var fieldsStr = [
 	"name",
 	"lastName",
 	"title",
-	"suffix"
+    "accountId",
+    "charId"
 ];
 
 // populates the fields with stringz obj (type: String, required, defaults to empty string)
 fieldsStr.map(function(field){
 	schemaObj[field] = stringz;
+});
+
+fieldDates.map(function(field){
+   schemaObj[field] = datez; 
 });
 
 // _id automatic for documents

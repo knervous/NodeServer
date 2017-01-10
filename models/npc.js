@@ -30,7 +30,7 @@ var npcSchema = new Schema({
 	attackCount: reqNumZero,
 	npcSpecialAttks: {type: String, required: true, default: ""},
 	specialAbilities: {type: String, default: null}, // ok if its not required and not used, will it still default to null? (idk)
-	aggroRadius: {type: Number, required: true, default: 0}	
+	aggroRadius: {type: Number, required: true, default: 0},	
 	armorTintId: reqNumZero,  // id
 	armorTintRed: reqNumZero,
 	armorTintGreen: reqNumZero,
