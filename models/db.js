@@ -25,6 +25,7 @@ process.on('SIGINT', function(){
 
 // bring in models
 require('./npc.js');
+require('./zone.js')
 require('./player.js');
 require('./account.js');
 require('./spawn.js');

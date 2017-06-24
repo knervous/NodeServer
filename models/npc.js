@@ -8,11 +8,12 @@ var reqNumZero = { type: Number, required: true, default: 0};
 // Making comment on each field that may later be changed to ObjectId rather than number with "id"
 
 var npcSchema = new Schema({
-	name : { type: String, required: true },
+	name : { type: String, required: true, default: "Placeholder000" },
 	lastName : { type: String, default: null },
+	texture : { type: String, default: null },
 	level : reqNumZero, 
 	race : reqNumZero,
-	"class" : reqNumZero, 
+	class : reqNumZero, 
 	bodyType: reqNumZero, 
 	hp: reqNumZero,
 	mana: reqNumZero,
@@ -28,7 +29,7 @@ var npcSchema = new Schema({
 	minDmg: reqNumZero,
 	maxDmg: reqNumZero,
 	attackCount: reqNumZero,
-	npcSpecialAttks: {type: String, required: true, default: ""},
+	npcSpecialAttks: {type: String, required: true, default: "none"},
 	specialAbilities: {type: String, default: null}, // ok if its not required and not used, will it still default to null? (idk)
 	aggroRadius: {type: Number, required: true, default: 0},	
 	armorTintId: reqNumZero,  // id
@@ -58,7 +59,7 @@ var npcSchema = new Schema({
 	sta: {type: Number, required: true, default: 75},
 	dex: {type: Number, required: true, default: 75},
 	agi: {type: Number, required: true, default: 75},
-	"int": {type: Number, required: true, default: 80},
+	int: {type: Number, required: true, default: 80},
 	wis: {type: Number, required: true, default: 75},
 	cha: {type: Number, required: true, default: 75},
 	atk: reqNumZero,
