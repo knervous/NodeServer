@@ -12,8 +12,7 @@ var zoneSchema = new Schema({
 	id: reqNumZero,
 	name: reqString,
 	fullName: reqString,
-	spawns: { type: Array, required: true, default: [] },
-	npcs: { type: Array, required: true, default: [] }
+	spawns: { type: Array, required: true, default: [] }
 });
 
 module.exports = mongoose.model('Zone', zoneSchema);

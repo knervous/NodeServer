@@ -11,6 +11,7 @@ var npcSchema = new Schema({
 	name : { type: String, required: true, default: "Placeholder000" },
 	lastName : { type: String, default: null },
 	texture : { type: String, default: null },
+	textureId: { type: Number, default: -1},
 	level : reqNumZero, 
 	race : reqNumZero,
 	class : reqNumZero, 
@@ -18,7 +19,6 @@ var npcSchema = new Schema({
 	hp: reqNumZero,
 	mana: reqNumZero,
 	gender: reqNumZero,
-	texture: reqNumZero,
 	size: reqNumZero,
 	hpRegenRate: reqNumZero,
 	manaRegenRate: reqNumZero,
@@ -28,14 +28,7 @@ var npcSchema = new Schema({
 	npcFactionId: reqNumZero,  // id
 	minDmg: reqNumZero,
 	maxDmg: reqNumZero,
-	attackCount: reqNumZero,
-	npcSpecialAttks: {type: String, required: true, default: "none"},
-	specialAbilities: {type: String, default: null}, // ok if its not required and not used, will it still default to null? (idk)
 	aggroRadius: {type: Number, required: true, default: 0},	
-	armorTintId: reqNumZero,  // id
-	armorTintRed: reqNumZero,
-	armorTintGreen: reqNumZero,
-	armorTintBlue: reqNumZero,
 	dMeleeTexture1: reqNumZero,
 	dMeleeTexture2: reqNumZero,
 	primMeleeType: {type: Number, required: true, default: 28},
@@ -49,10 +42,8 @@ var npcSchema = new Schema({
 	pr: reqNumZero,
 	seeInvis: reqNumZero,
 	seeInvisUndead: reqNumZero,
-	qGlobal: reqNumZero,
 	ac: reqNumZero,
 	npcAggro: reqNumZero,
-	spawnLimit: reqNumZero,
 	attackSpeed: reqNumZero,
 	attackDelay: {type: Number, required: true, default: 30},
 	str: {type: Number, required: true, default: 75},
@@ -68,16 +59,10 @@ var npcSchema = new Schema({
 	version: reqNumZero,
 	maxLevel: reqNumZero,
 	scaleRate: {type: Number, required: true, default: 100},
-	uniqueSpawnByName: {type: Number, required: true, default: 0},
 	isQuest: reqNumZero,
-	spellScale: reqNumZero,
-	healScale: reqNumZero,
-	armTexture: reqNumZero,
-	bracerTexture: reqNumZero,
-	handTexture: reqNumZero,
-	legTexture: reqNumZero,
-	freeTexture: reqNumZero,
-	light: reqNumZero
+	light: reqNumZero,
+	x: reqNumZero,
+	y: reqNumZero
 });
 
 module.exports = mongoose.model('Npc', npcSchema);

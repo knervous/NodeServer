@@ -7,14 +7,17 @@ var Account = mongoose.model('Account'); // if you have acccess to mongoose mode
 var Player = mongoose.model('Player');
 var Inventory = mongoose.model('Inventory');
 
+const bootZone = require('./zone')
+var activeZones = []
+
+bootZone.start(0,5998)
+
 io.on('connection', function(socket) {
-    
     socket.emit('login_connected');
     console.log('user connected');
     var accountId = '';
     
     socket.on('trylogin', function(data){
-        
         Account.findOne({ name: data.username }, function(err, userExists){
            if(err) return console.error(err);
             if(userExists == null && data.username.length > 0 && data.password.length > 0)
