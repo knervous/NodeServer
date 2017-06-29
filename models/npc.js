@@ -61,8 +61,10 @@ var npcSchema = new Schema({
 	scaleRate: {type: Number, required: true, default: 100},
 	isQuest: reqNumZero,
 	light: reqNumZero,
-	x: reqNumZero,
-	y: reqNumZero
+	roaming: {type: Object, required: false, default: []},
+	position: {type: Object, required: false, default: {x:0,y:0}},
+	destination: {type: Object, required: false, default: {x:0,y:0}},
+	zoneId: {type: String, required: false},
 });
 
 module.exports = mongoose.model('Npc', npcSchema);

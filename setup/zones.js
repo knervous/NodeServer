@@ -8,34 +8,13 @@ Zone.remove({},()=>{
 
 const Npcs = require('./npcs')
 
+const qeynos2 = require('./spawns/qeynos2')
+
 const northQeynos = new Zone({
     id: 0,
     name: "qeynos2",
     fullName: "North Qeynos",
-    spawns: [
-        { x: 0, y: 0,possible: [
-                {
-                    id: Npcs.fireBeetle._id,
-                    chance: 100
-                }
-            ]
-        },
-        { x: 500, y: 1000,possible: [
-                {
-                    id: Npcs.fireBeetle._id,
-                    chance: 100
-                }
-            ]
-        },
-        { x: 250, y: 100,possible: [
-                {
-                    id: Npcs.fireBeetle._id,
-                    chance: 100
-                }
-            ]
-        },
-
-        ]
+    spawns: qeynos2(Npcs)
 })
 
 northQeynos.save()
