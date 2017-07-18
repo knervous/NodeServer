@@ -129,9 +129,9 @@ const worldTick = () => {
     console.log('World Tick')
     for(let i_n in npcs){
         var n = npcs[i_n]
-        console.log('hit here')
-        console.log(`Position for ${n.name} -- ${JSON.stringify(n.position)} -- ${JSON.stringify(n.destination)}`)
-        console.log(`Current ${n.roaming.points[n.roaming.index].current}  --  Ticks ${n.roaming.points[n.roaming.index].ticks}`)
+        //console.log('hit here')
+       // console.log(`Position for ${n.name} -- ${JSON.stringify(n.position)} -- ${JSON.stringify(n.destination)}`)
+        //console.log(`Current ${n.roaming.points[n.roaming.index].current}  --  Ticks ${n.roaming.points[n.roaming.index].ticks}`)
         if(n.roaming.points){
             let points = n.roaming.points;
             currentPathPoint = points[n.roaming.index]
@@ -168,18 +168,18 @@ const frameTick = () => {
 
 const updatePositionToClient = (io) => {
     if(!globalSocket) return;
-    console.log('trying to update position to client')
+    //console.log('trying to update position to client')
    
     for(let i_n in npcs){
         var n = npcs[i_n]
         if(n.position.x !== n.destination.x || n.position.y !== n.destination.y){
-            console.log('want to update')
+          //  console.log('want to update')
             let data = {
                 id: i_n,
                 x: n.position.x,
                 y: n.position.y
             }
-            globalSocket.emit('move',data)
+           // globalSocket.emit('move',data)
         }
     }
 }

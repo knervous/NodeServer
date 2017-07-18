@@ -1,11 +1,11 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var numz = { type: Number, required: true, default: 0 };
+var inventory = require('./inventory')
+var numz = { type: Number, required: false, default: 0 };
 var stringz = { type: String, required: false, default: "" };
-var datez = { type: Date, required: true, default: new Date() };
+var datez = { type: Date, required: false, default: new Date() };
 
-// most of these will use numz object above...
 
 var fieldNames = [
 	"zoneId",
@@ -69,6 +69,8 @@ fieldsStr.map(function(field){
 fieldDates.map(function(field){
    schemaObj[field] = datez; 
 });
+
+schemaObj['inventory'] = {type: inventory.schema, required: true, default: new inventory.model()}
 
 // _id automatic for documents
 var playerSchema = new Schema(schemaObj); // our plain schema obj needs to be passed into Schema constructor

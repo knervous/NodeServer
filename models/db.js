@@ -1,7 +1,7 @@
 // handle our connection to mongoose db
 var mongoose = require('mongoose');
 //var config = require('../../config.js');
-var dbURI = 'mongodb://localhost/test'; //config.MONGODB_URL;
+var dbURI = 'mongodb://127.0.0.1/test'; //config.MONGODB_URL;
 
 mongoose.connect(dbURI);
 
@@ -30,5 +30,9 @@ require('./player.js');
 require('./account.js');
 require('./spawn.js');
 require('./user.js'); 
-require('./inventory.js');// (this was originally in your login_server.js file, moved it for better organization)
+require('./inventory.js');
+require('./item.js');
+require('./liveitem')
+
+// (this was originally in your login_server.js file, moved it for better organization)
 

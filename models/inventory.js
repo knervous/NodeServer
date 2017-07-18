@@ -1,10 +1,9 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var defaultNum = { type: Number, required: true, default: 0 };
+var defaultNum = { type: String, required: false, default: '' };
 
 var fieldNames = [
-    "charID",
     "primary",
     "secondary",
     "arm",
@@ -18,6 +17,7 @@ var fieldNames = [
     "rightFinger",
     "hands",
     "head",
+    "ranged",
     "legs",
     "neck",
     "shoulders",
@@ -42,5 +42,10 @@ fieldNames.map(function(field){
 });
 
 var inventorySchema = new Schema(schemaObj); // our plain schema obj needs to be passed into Schema constructor
+var m = mongoose.model('Inventory', inventorySchema);
 
-module.exports = mongoose.model('Inventory', inventorySchema);
+module.exports = 
+{
+    schema: inventorySchema,
+    model: m
+}

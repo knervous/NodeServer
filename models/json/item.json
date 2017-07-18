@@ -1,0 +1,1392 @@
+{
+    "id": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "minstatus": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "Name": {
+        "type": "string",
+        "required": false,
+        "default": null
+    },
+    "aagi": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "ac": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "accuracy": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "acha": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "adex": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "aint": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "artifactflag": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "asta": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "astr": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "attack": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "augrestrict": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "augslot1type": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "augslot1visible": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "augslot2type": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "augslot2visible": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "augslot3type": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "augslot3visible": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "augslot4type": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "augslot4visible": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "augslot5type": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "augslot5visible": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "augtype": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "avoidance": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "awis": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "bagsize": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "bagslots": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "bagtype": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "bagwr": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "banedmgamt": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "banedmgraceamt": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "banedmgbody": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "banedmgrace": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "bardtype": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "bardvalue": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "book": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "casttime": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "casttime_": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "charmfile": {
+        "type": "string",
+        "required": false,
+        "default": null
+    },
+    "charmfileid": {
+        "type": "string",
+        "required": false,
+        "default": null
+    },
+    "classes": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "color": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "combateffects": {
+        "type": "string",
+        "required": false,
+        "default": null
+    },
+    "extradmgskill": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "extradmgamt": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "price": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "cr": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "damage": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "damageshield": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "deity": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "delay": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "augdistiller": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "dotshielding": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "dr": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "clicktype": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "clicklevel2": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "elemdmgtype": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "elemdmgamt": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "endur": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "factionamt1": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "factionamt2": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "factionamt3": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "factionamt4": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "factionmod1": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "factionmod2": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "factionmod3": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "factionmod4": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "filename": {
+        "type": "string",
+        "required": false,
+        "default": null
+    },
+    "focuseffect": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "fr": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "fvnodrop": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "haste": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "clicklevel": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "hp": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "regen": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "icon": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "idfile": {
+        "type": "string",
+        "required": false,
+        "default": null
+    },
+    "itemclass": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "itemtype": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "ldonprice": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "ldontheme": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "ldonsold": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "light": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "lore": {
+        "type": "string",
+        "required": false,
+        "default": null
+    },
+    "loregroup": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "magic": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "mana": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "manaregen": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "enduranceregen": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "material": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "maxcharges": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "mr": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "nodrop": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "norent": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "pendingloreflag": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "pr": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "procrate": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "races": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "range": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "reclevel": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "recskill": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "reqlevel": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "sellrate": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "shielding": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "size": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "skillmodtype": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "skillmodvalue": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "slots": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "clickeffect": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "spellshield": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "strikethrough": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "stunresist": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "summonedflag": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "tradeskills": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "favor": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "weight": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "UNK012": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "UNK013": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "benefitflag": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "UNK054": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "UNK059": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "booktype": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "recastdelay": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "recasttype": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "guildfavor": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "UNK123": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "UNK124": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "attuneable": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "nopet": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "updated": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "comment": {
+        "type": "string",
+        "required": false,
+        "default": null
+    },
+    "UNK127": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "pointtype": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "potionbelt": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "potionbeltslots": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "stacksize": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "notransfer": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "stackable": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "UNK134": {
+        "type": "string",
+        "required": false,
+        "default": null
+    },
+    "UNK137": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "proceffect": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "proctype": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "proclevel2": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "proclevel": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "UNK142": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "worneffect": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "worntype": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "wornlevel2": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "wornlevel": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "UNK147": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "focustype": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "focuslevel2": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "focuslevel": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "UNK152": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "scrolleffect": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "scrolltype": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "scrolllevel2": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "scrolllevel": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "UNK157": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "serialized": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "verified": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "serialization": {
+        "type": "string",
+        "required": false,
+        "default": null
+    },
+    "source": {
+        "type": "string",
+        "required": false,
+        "default": null
+    },
+    "UNK033": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "lorefile": {
+        "type": "string",
+        "required": false,
+        "default": null
+    },
+    "UNK014": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "svcorruption": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "UNK038": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "UNK060": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "augslot1unk2": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "augslot2unk2": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "augslot3unk2": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "augslot4unk2": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "augslot5unk2": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "UNK120": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "UNK121": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "questitemflag": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "UNK132": {
+        "type": "string",
+        "required": false,
+        "default": null
+    },
+    "clickunk5": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "clickunk6": {
+        "type": "string",
+        "required": false,
+        "default": null
+    },
+    "clickunk7": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "procunk1": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "procunk2": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "procunk3": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "procunk4": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "procunk6": {
+        "type": "string",
+        "required": false,
+        "default": null
+    },
+    "procunk7": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "wornunk1": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "wornunk2": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "wornunk3": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "wornunk4": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "wornunk5": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "wornunk6": {
+        "type": "string",
+        "required": false,
+        "default": null
+    },
+    "wornunk7": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "focusunk1": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "focusunk2": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "focusunk3": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "focusunk4": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "focusunk5": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "focusunk6": {
+        "type": "string",
+        "required": false,
+        "default": null
+    },
+    "focusunk7": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "scrollunk1": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "scrollunk2": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "scrollunk3": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "scrollunk4": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "scrollunk5": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "scrollunk6": {
+        "type": "string",
+        "required": false,
+        "default": null
+    },
+    "scrollunk7": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "UNK193": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "purity": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "evolvinglevel": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "clickname": {
+        "type": "string",
+        "required": false,
+        "default": null
+    },
+    "procname": {
+        "type": "string",
+        "required": false,
+        "default": null
+    },
+    "wornname": {
+        "type": "string",
+        "required": false,
+        "default": null
+    },
+    "focusname": {
+        "type": "string",
+        "required": false,
+        "default": null
+    },
+    "scrollname": {
+        "type": "string",
+        "required": false,
+        "default": null
+    },
+    "dsmitigation": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "heroic_str": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "heroic_int": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "heroic_wis": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "heroic_agi": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "heroic_dex": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "heroic_sta": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "heroic_cha": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "heroic_pr": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "heroic_dr": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "heroic_fr": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "heroic_cr": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "heroic_mr": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "heroic_svcorrup": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "healamt": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "spelldmg": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "clairvoyance": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "backstabdmg": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "created": {
+        "type": "string",
+        "required": false,
+        "default": null
+    },
+    "elitematerial": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "ldonsellbackrate": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "scriptfileid": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "expendablearrow": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "powersourcecapacity": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "bardeffect": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "bardeffecttype": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "bardlevel2": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "bardlevel": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "bardunk1": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "bardunk2": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "bardunk3": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "bardunk4": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "bardunk5": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "bardname": {
+        "type": "string",
+        "required": false,
+        "default": null
+    },
+    "bardunk7": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "UNK214": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "UNK219": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "UNK220": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "UNK221": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "UNK222": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "UNK223": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "UNK224": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "UNK225": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "UNK226": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "UNK227": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "UNK228": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "UNK229": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "UNK230": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "UNK231": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "UNK232": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "UNK233": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "UNK234": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "UNK235": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "UNK236": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "UNK237": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "UNK238": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "UNK239": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "UNK240": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "UNK241": {
+        "type": "number",
+        "required": false,
+        "default": null
+    },
+    "UNK242": {
+        "type": "number",
+        "required": false,
+        "default": null
+    }
+}

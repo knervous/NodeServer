@@ -6,6 +6,7 @@ var db = require('./models/db.js');
 var Account = mongoose.model('Account'); // if you have acccess to mongoose model you can grab models like this (db.js is what requires them)
 var Player = mongoose.model('Player');
 var Inventory = mongoose.model('Inventory');
+var LiveItem = mongoose.model('LiveItem');
 
 const bootZone = require('./zone')
 var activeZones = []
@@ -43,12 +44,36 @@ io.on('connection', function(socket) {
                         {
                             console.log('password okay', userExists.password);
                             data.account = userExists;
+                            let inventories = []
                             accountId = userExists.lsAccountId;
                             Player.find({ accountId: userExists.lsAccountId}, function(err, chars){
                                 if(err) return console.error(err);
                                 else{
                                     data.characters = chars;
-                                    socket.emit('login_success', data);
+                                    let promises = []
+                                    let inventories = []
+                                    chars.forEach((char)=>{
+                                        let inv = new Object(char.inventory._doc);
+                                        var objId = require('mongoose').mongo.ObjectID
+                                        for(let name in inv){
+                                            let val = inv[name];
+                                            if(val !== undefined && val.length > 0 && val !== '_id'){
+                                                promises.push(
+                                                    LiveItem.findOne({_id: new objId(val)}, (err,res) => {
+                                                        if(res){
+                                                            inv[name] = res._doc;
+                                                        }
+                                                    }).exec()
+                                                )
+                                            }
+                                        }
+                                        inventories.push(inv)
+                                    })  
+                                    
+                                    Promise.all(promises).then(()=>{
+                                        data.inventories = inventories
+                                        socket.emit('login_success', data);
+                                    })
                                 }
                             });
                         }
@@ -73,6 +98,29 @@ io.on('connection', function(socket) {
                  
                });
     });
+
+    socket.on('get_inventory', (inv) => {
+    //let inv = new Object(res.inventory._doc);
+        var promises = []
+        var objId = require('mongoose').mongo.ObjectID
+        for(let name in inv){
+            let val = inv[name];
+            if(val !== undefined && val.length > 0 && val !== '_id'){
+                promises.push(
+                    liveItem.findOne({_id: new objId(val)}, (err,res) => {
+                        if(res){
+                            inv[name] = res._doc;
+                        }
+                    }).exec()
+                )
+            }
+        }
+        Promise.all(promises).then(()=>{
+            console.log('resolved promises')
+            console.log(inv)
+        })
+       
+    })
     
     socket.on('create_new_character',function(charData){
         console.log(charData);
