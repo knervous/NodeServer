@@ -25,6 +25,7 @@ var itemSchema = new Schema({
 	classes: {type: Array, required: false, default: []},
 	races: {type: Array, required: false, default: []},
 	slots: {type: Array, required: false, default: []},
+	bagSlots: {type: Array, required: false, default: []},
 	combateffects: str,
 	price: reqNumZero,
 	damage: reqNumZero,
