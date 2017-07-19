@@ -179,7 +179,7 @@ const updatePositionToClient = (io) => {
                 x: n.position.x,
                 y: n.position.y
             }
-           // globalSocket.emit('move',data)
+            globalSocket.emit('move',data)
         }
     }
 }
