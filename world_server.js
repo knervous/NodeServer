@@ -9,9 +9,11 @@ var Inventory = mongoose.model('Inventory');
 var LiveItem = mongoose.model('LiveItem');
 
 const bootZone = require('./zone')
+const chatServer = require('./chat_server')
 var activeZones = []
 
 bootZone.start(0,5998)
+chatServer.start(7500);
 
 io.on('connection', function(socket) {
     socket.emit('login_connected');
