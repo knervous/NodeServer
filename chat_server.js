@@ -38,6 +38,9 @@ const handleChatServer = (io) =>
                 }else if(data.message.startsWith('#summon')){
                     let id = data.message.split(' ')[1]
                     Item.findOne({id: id}, (err,res)=>{
+                        if(res === null){
+                            return;
+                        }
                         let newItem = new LiveItem(res._doc)
                         //console.dir(newItem)
                         let i = new mongoose.Types.ObjectId()
