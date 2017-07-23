@@ -44,13 +44,42 @@ const handleChatServer = (io) =>
                         newItem._id = i
                         newItem.save((err) => {
                             Player.findOne({name: data.name}, (err,p) => {
-                                p.inventory.invSlot1 = i
+                                let pushInv = p.inventory._doc
+                                let slot
+                                if(pushInv.invSlot1 === ''){
+                                    slot = 1
+                                    p.inventory.invSlot1 = i
+                                }else if(pushInv.invSlot2 === ''){
+                                    slot = 2
+                                    p.inventory.invSlot2 = i
+                                }else if(pushInv.invSlot3 === ''){
+                                    slot = 3
+                                    p.inventory.invSlot3 = i
+                                }else if(pushInv.invSlot4 === ''){
+                                    slot = 4
+                                    p.inventory.invSlot4 = i
+                                } else if(pushInv.invSlot5 === ''){
+                                    slot = 5
+                                    p.inventory.invSlot5 = i
+                                }else if(pushInv.invSlot6 === ''){
+                                    slot = 6
+                                    p.inventory.invSlot6 = i
+                                }else if(pushInv.invSlot7 === ''){
+                                    slot = 7
+                                    p.inventory.invSlot7 = i
+                                }else if(pushInv.invSlot8 === ''){
+                                    slot = 8
+                                    p.inventory.invSlot8 = i
+                                }else{
+                                    slot = 0
+                                }
+                                
                                 p.save((er) => {
-                                    let pushInv = p.inventory._doc
                                     pushInv.invSlot1 = newItem
                                     socket.emit('summon_item',
                                     { item: 'Item Summoned: ' + res.Name,
-                                      inventory: pushInv
+                                      slot: slot,
+                                      summoned: newItem
                                     })
                                 })
                             })
