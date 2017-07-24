@@ -23,10 +23,8 @@ const handleChatServer = (io) =>
 
         socket.on('message', async (data) => {
             console.dir(data)
-            if(data.message.startsWith('#')){
-                if(data.message.startsWith('#find')){
-                    let searchTerm = data.message.split(' ')[1]
-                    var q = Item.find({Name: new RegExp(searchTerm)}).limit(50);
+                if(data.type === 'Find'){
+                    var q = Item.find({Name: new RegExp(data.message)}).limit(50);
                     q.exec((err, res) => {
                         let ar = []
                         res.forEach((item) => {
@@ -35,9 +33,9 @@ const handleChatServer = (io) =>
                         console.dir(ar)
                         socket.emit('item_search_result', {ar});
                     });
-                }else if(data.message.startsWith('#summon')){
-                    let id = data.message.split(' ')[1]
-                    Item.findOne({id: id}, (err,res)=>{
+                }
+                else if(data.type === 'Summon'){
+                    Item.findOne({id: data.message}, (err,res)=>{
                         if(res === null){
                             return;
                         }
@@ -90,7 +88,6 @@ const handleChatServer = (io) =>
                     })
                       
                 }
-            }
             Player.findOne({name: data.name}, (err,res) => {
                // console.dir(res)
             });
