@@ -55,8 +55,8 @@ const handleClientServer = (io) =>
             y: 0
             },
             position: {
-                x: 2700,
-                y: -4700
+                x: 0,
+                y: 0
             },
             lastMoveTime: 0
         };
@@ -81,22 +81,20 @@ const handleClientServer = (io) =>
         }
         
         socket.on('move', function(data){
-            data.id = thisPlayerId;
+            let movingPlayer = players[thisPlayerId]
+            movingPlayer.destination.x = data.x;
+            movingPlayer.destination.y = data.y;
+            console.dir(movingPlayer)
             console.log('client moved to ', JSON.stringify(data));
-            
-            player.position.x = data.x;
-            player.position.y = data.y;
-            
-            socket.broadcast.emit('move', data)
         });
         
         socket.on('updatePosition', function(data){
-            console.log("update position: ", data);
-            data.id = thisPlayerId;
-            player.position.x = data.x;
-            player.position.y = data.y;
+            // console.log("update position: ", data);
+            // data.id = thisPlayerId;
+            // player.position.x = data.x;
+            // player.position.y = data.y;
             
-            socket.broadcast.emit('updatePosition', data)
+            // socket.broadcast.emit('updatePosition', data)
         });
         
         socket.on('disconnect',function(){
@@ -302,9 +300,6 @@ const worldTick = () => {
     console.log('World Tick')
     for(let i_n in npcs){
         var n = npcs[i_n]
-        //console.log('hit here')
-       // console.log(`Position for ${n.name} -- ${JSON.stringify(n.position)} -- ${JSON.stringify(n.destination)}`)
-        //console.log(`Current ${n.roaming.points[n.roaming.index].current}  --  Ticks ${n.roaming.points[n.roaming.index].ticks}`)
         if(n.roaming.points){
             let points = n.roaming.points;
             currentPathPoint = points[n.roaming.index]
@@ -326,7 +321,6 @@ const worldTick = () => {
 const frameTick = () => {
     for(let i_n in npcs){
         var n = npcs[i_n]
-       // console.log(`${n.position.x} | ${n.destination.x}    ||   ${n.position.y} | ${n.destination.y}`)
         if(n.position.x !== n.destination.x || n.position.y !== n.destination.y){
             var cur = new Vec2(n.position.x, n.position.y)
             var end = new Vec2(n.destination.x, n.destination.y)
@@ -337,20 +331,44 @@ const frameTick = () => {
             }
         }
     }
+    for(let i_n in players){
+        var n = players[i_n]
+        if(n.position.x !== n.destination.x || n.position.y !== n.destination.y){
+            var cur = new Vec2(n.position.x, n.position.y)
+            var end = new Vec2(n.destination.x, n.destination.y)
+            var distance = cur.distance(end)
+            
+            if(!(distance < 5)){
+                n.position = cur.lerp(end, 20/distance, true)
+            }
+        }
+    }
 }
 
 const updatePositionToClient = (io) => {
     if(!globalSocket) return;
-    //console.log('trying to update position to client')
    
     for(let i_n in npcs){
         var n = npcs[i_n]
         if(n.position.x !== n.destination.x || n.position.y !== n.destination.y){
-          //  console.log('want to update')
             let data = {
                 id: i_n,
                 x: n.position.x,
-                y: n.position.y
+                y: n.position.y,
+                type: 'npc'
+            }
+            globalSocket.emit('move',data)
+        }
+    }
+
+    for(let i_n in players){
+        var n = players[i_n]
+        if(n.position.x !== n.destination.x || n.position.y !== n.destination.y){
+            let data = {
+                id: i_n,
+                x: n.position.x,
+                y: n.position.y,
+                type: 'player'
             }
             globalSocket.emit('move',data)
         }

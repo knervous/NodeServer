@@ -87,6 +87,13 @@ const handleChatServer = (io) =>
                         })
                     })
                       
+                }else if(data.type === 'OOC'){
+                    let obj = {
+                        name: data.name,
+                        type: 0,
+                        content: data.message
+                    }
+                    socket.broadcast.emit('chat_message', obj);
                 }
             Player.findOne({name: data.name}, (err,res) => {
                // console.dir(res)
